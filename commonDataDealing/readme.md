@@ -9,4 +9,7 @@
 >  (well.. using bash and acting cracker are first come, but .. why cares)
 >  most importantly, they have a built-in hash Map like unordered_map <type1, type2>
 >...just depress your pulse to re-built a structure like double array, people have done before.
-
+>
+> 3. vector & array
+> note that in vector, a changable array, we gain the length with vector.size() instead of array.length()
+> when it comes to claim a array, type array[length]; vector<type> vectorName(size, initialValue(choseble))
