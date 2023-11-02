@@ -1,6 +1,9 @@
 //1.leave edge along
 //2.find out all triple 0 and counter +=1
 //3.check out if brink are double 0 if so +=1
+//however ,still cant figure the brink..
+//so we leave brink along instead to a 0, and abanded find triple 000 to a directly path
+//it's fine to set another data structure、 array, we are here to slove and try for time complexity
 class Solution {
 public:
     bool canPlaceFlowers(vector<int>& flowerbed, int n) {
