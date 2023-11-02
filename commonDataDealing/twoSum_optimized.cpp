@@ -6,7 +6,7 @@ public:
 	{
 		unordered_map<int, int> hashMap;
 		for (int i=0; i<nums.size(); i++) //simply .size() better than c
-		{
+		{				  //note that .size() other .length() of an array
 			hashMap[nums[i]] = i;	  //index: No.i content: nums[i]
 		}
 		//goal: find complement number if exist
