@@ -1,3 +1,7 @@
+//concept are simple, just lick gcd but use "compare" and "whats left"
+//to replace the "mod" or "%"
+//and repeat the rest..
+
 #include <iostream>
 #include <string>
 
