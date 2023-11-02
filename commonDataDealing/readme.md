@@ -13,3 +13,4 @@
 > 3. vector & array
 > note that in vector, a changable array, we gain the length with vector.size() instead of array.length()
 > when it comes to claim a array, type array[length]; vector<type> vectorName(size, initialValue(choseble))
+> when add elements, v.push_back(element), v.at(position) to aquire;
