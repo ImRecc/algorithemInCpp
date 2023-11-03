@@ -1,4 +1,6 @@
 # algorithemInCpp
 some example and thinking about leetcode within cpp
-> common means "well, nice one but not impressed me"
-> still thinking about where's the "prog-thinking.readme.md" shoud be 
+> common means "well, nice one but not impressed me" <br>
+> uncommon mean "damn, you should check this out" <br>
+
+**program-thinking files are inside the folders** 
