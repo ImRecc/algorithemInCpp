@@ -37,11 +37,11 @@ this pazzle inspirate me about usage of hashMap<key, value>
 > ``` hashMap[i]++, the best way to record i's frequncy, a nice counter
 > it's also can be a quick finder to see if have befor
 
-> in this case, we iterator by order, and not that a+b=k, b+a=k too
-> so when we meet a, sure hashMap[a]<1, but we could record it like
-> **hashMap[a]++;**
-> when we meet first b soon, hashMap[k-b]==1, so counter++
-> nice and ez  
+> in this case, we iterator by order, and not that a+b=k, b+a=k too <br>
+> so when we meet a, sure hashMap[a]<1, but we could record it like <br>
+> **hashMap[a]++;** <br>
+> when we meet first b soon, hashMap[k-b]==1, so counter++ <br>
+> nice and ez  <br>
 
 
 
