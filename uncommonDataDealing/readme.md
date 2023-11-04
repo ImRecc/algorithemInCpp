@@ -43,5 +43,8 @@ this pazzle inspirate me about usage of hashMap<key, value>
 > when we meet first b soon, hashMap[k-b]==1, so counter++ <br>
 > nice and ez  <br>
 
+## 5. find max average 
+wait for construct
+
 
 
