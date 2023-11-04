@@ -32,6 +32,16 @@ this pazzle reminds me how to think: find controlable variable, even it decrease
 > loop it 'till two ends meet
 > dont wary about code, just move one by one, a simple finalArea>?nowArea can chose which to record
 
+## 4. counter of A+B=K
+this pazzle inspirate me about usage of hashMap<key, value>
+> ``` hashMap[i]++, the best way to record i's frequncy, a nice counter
+> it's also can be a quick finder to see if have befor
+
+> in this case, we iterator by order, and not that a+b=k, b+a=k too
+> so when we meet a, sure hashMap[a]<1, but we could record it like
+> **hashMap[a]++;**
+> when we meet first b soon, hashMap[k-b]==1, so counter++
+> nice and ez  
 
 
 
