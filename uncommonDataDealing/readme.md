@@ -44,7 +44,11 @@ this pazzle inspirate me about usage of hashMap<key, value>
 > nice and ez  <br>
 
 ## 5. find max average 
-wait for construct
+named slide solution
+> sum of N nums like a+b+c+d+...y <br>
+> but no need to counter every N nums each times <br>
+> **record current num, than replace _a to z_ <br>
+> sum again, we find other sum
 
 
 
