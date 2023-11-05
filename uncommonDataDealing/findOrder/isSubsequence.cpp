@@ -1,3 +1,5 @@
+//392. Is Subsequence
+
 //funny quest funny solution
 //we traverse entire main string _WITH ORDER_
 //and record how many we found in main string
