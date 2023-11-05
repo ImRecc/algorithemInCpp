@@ -1,3 +1,5 @@
+//334. Increasing Triplet Subsequence
+
 //interesting pazzle
 
 //no matter how the smallest element change
