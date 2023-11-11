@@ -22,14 +22,16 @@ public:
         {
             if (nums[lower] == 0) countZeros++;
             
-            while (countZeros > k) 
+            while (countZeros > k)  //out of range happened
             {
                 if (nums[upper] == 0) 
                 {
-                    countZeros--;
+                    countZeros--; //till length valid
                 }
-                upper++;
-            }
+                upper++;           //moving the upper Pointer 
+                                //btw, lower-upper+1 to count maxConsecutiveOnes,
+                                //it's controlled the length of how many ones...
+            }       //maintaned the length of k0
             
             maxConsecutiveOnes = max(maxConsecutiveOnes, lower - upper + 1);  //3-2=1, but 3,2=2
             lower++;
