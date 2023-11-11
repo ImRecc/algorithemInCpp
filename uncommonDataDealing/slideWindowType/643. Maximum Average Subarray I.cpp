@@ -1,4 +1,8 @@
 //feels like prefix or postfix like pazzle
+//it is, but we can create a slider which length equals required averages'
+//note that an average num == 1+2+3+..+n / n 
+//when slider move, leave 1 alone and plus n+1
+//use the max() finction well to record maxNums.
 class Solution {
 public:
     double findMaxAverage(vector<int>& nums, int k) {
