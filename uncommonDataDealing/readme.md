@@ -62,6 +62,26 @@ clever way in count 0
 > p2. reconstructed: counte contiouns 0, <br>
 > if overBoard like exceed to k, move upper to validize it <br>
 > see more details via code
-> ```
+``while (lower < nums.size()) 
+        {
+            if (nums[lower] == 0) countZeros++;
+            
+            while (countZeros > k)  //out of range happened
+            {
+                if (nums[upper] == 0) 
+                {
+                    countZeros--; //till length valid
+                }
+                upper++;           //moving the upper Pointer 
+                                //btw, lower-upper+1 to count maxConsecutiveOnes,
+                                //it's controlled the length of how many ones...
+            }       //maintaned the length of k0
+            
+            maxConsecutiveOnes = max(maxConsecutiveOnes, lower - upper + 1);  //3-2=1, but 3,2=2
+            lower++;
+        }
+
+> two pointer still, but instead of directly count how many or how many uno flip card remain <br>
+> simply use "if countedZeros < k" controls length to find out how many valid length verified.
 
 
