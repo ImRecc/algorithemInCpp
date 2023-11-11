@@ -37,18 +37,24 @@ this pazzle inspirate me about usage of hashMap<key, value>
 > ``` hashMap[i]++, the best way to record i's frequncy, a nice counter
 > it's also can be a quick finder to see if have befor
 
-> in this case, we iterator by order, and not that a+b=k, b+a=k too <br>
+> in this case, we iterator by order, and note that a+b=k, b+a=k too <br>
 > so when we meet a, sure hashMap[a]<1, but we could record it like <br>
 > **hashMap[a]++;** <br>
 > when we meet first b soon, hashMap[k-b]==1, so counter++ <br>
 > nice and ez  <br>
 
-## 5. find max average 
+## 5. find max average  || 6. slide: count vows via given slider plate
+#### 643. Maximum Average Subarray I.cpp || 1456. Maximum Number of Vowels in a Substring of Given Length.cpp
 named slide solution
 > sum of N nums like a+b+c+d+...y <br>
 > but no need to counter every N nums each times <br>
 > **record current num, than replace _a to z_ <br>
-> sum again, we find other sum
+> sum again, we find other sum 
+
+> same for No.6, slider contain N alpha and count if vows <br>
+> then when overSized, check if upPointer are vow, y->substract <br>
+> use max() function to manage 
+
 
 
 
