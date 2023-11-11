@@ -53,8 +53,15 @@ named slide solution
 
 > same for No.6, slider contain N alpha and count if vows <br>
 > then when overSized, check if upPointer are vow, y->substract <br>
-> use max() function to manage 
+> use max() function to manage
 
-
+## 7. find how many 1 with addtional uno card
+#### 1004. Max Consecutive Ones III
+clever way in count 0
+> p1. uno card way, however, when given k=0, over flip may occur
+> p2. reconstructed: counte contiouns 0, <br>
+> if overBoard like exceed to k, move upper to validize it <br>
+> see more details via code
+> ```
 
 
