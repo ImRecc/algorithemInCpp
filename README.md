@@ -4,3 +4,5 @@ some example and thinking about leetcode within cpp
 > uncommon mean "damn, you should check this out" <br>
 
 **program-thinking files are inside the folders** 
+
+upload a file "preProcess" to restore puzzles submitted but not done yet...
