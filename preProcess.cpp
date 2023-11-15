@@ -6,3 +6,6 @@
 206. reverse linked list
 104. maximum depth of binary tree
 872. leaf-similar trees
+374. Guess Number Higher or Lower
+
+// bro, there was so many, doubt that even I could make it
