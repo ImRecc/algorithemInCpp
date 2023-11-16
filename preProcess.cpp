@@ -7,5 +7,7 @@
 104. maximum depth of binary tree
 872. leaf-similar trees
 374. Guess Number Higher or Lower
+338. Counting Bits
+
 
 // bro, there was so many, doubt that even I could make it
