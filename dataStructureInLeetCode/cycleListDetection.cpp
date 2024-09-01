@@ -9,17 +9,20 @@
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
-        ListNode *p1 = head;
-        ListNode *p2 = p1->next;
-        if(p2==NULL) return false; //incase just one node
-        while (p1 != NULL)  //when p1 traveled to void, means there are a boundaries exsist.
+        if (head == NULL || head->next == NULL)  //clever way to avoid NULL->next;
         {
-            if (p1!=p2) 
+            return false; // The list is either empty or has only one node without a cycle
+        }
+        ListNode *p1 = head;
+        ListNode *p2 = head->next; //p1->next will leads to runtime error
+        while (p1 != NULL && p2 != NULL && p2->next != NULL) 
+        {
+            if (p1 == p2) 
             {
-                p1=p1->next;  
-                p2=p2->next->next;  //let's say there are a cycle, p1 are slower than p2, so the must be a time p2 chased p1 (p1==p2)
+                return true;  // Cycle detected
             }
-            else return true;  //p1!=null and p1==p2, yes, there are cycle
+            p1 = p1->next;
+            p2 = p2->next->next;  //when we met loop, p2 are faster than p1, so they must met.
         }
       return false;
     }
