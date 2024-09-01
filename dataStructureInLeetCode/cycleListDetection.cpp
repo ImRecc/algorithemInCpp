@@ -1,10 +1,18 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
         ListNode *p1 = head;
         ListNode *p2 = p1->next;
-        if(p2==null) return; //incase just one node
-        while (p1 != null)  //when p1 traveled to void, means there are a boundaries exsist.
+        if(p2==NULL) return false; //incase just one node
+        while (p1 != NULL)  //when p1 traveled to void, means there are a boundaries exsist.
         {
             if (p1!=p2) 
             {
