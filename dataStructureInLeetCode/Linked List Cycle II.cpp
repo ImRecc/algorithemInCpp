@@ -1,5 +1,3 @@
-![funTwistP2](https://github.com/user-attachments/assets/d429a9c0-dd10-4937-a344-fe83dec6baee)
-
 //https://leetcode.com/explore/learn/card/linked-list/214/two-pointer-technique/1214/
 /**
  * Definition for singly-linked list.
@@ -31,7 +29,7 @@ public:
                     p1=p1->next;
                     p3=p3->next;
                 }
-                return p3;      //see the draft for more details
+                return p3;      //see the draft for more details (
             }
             
         }
