@@ -29,7 +29,7 @@ public:
                     p1=p1->next;
                     p3=p3->next;
                 }
-                return p3;      //see the draft for more details (
+                return p3;      //see the draft for more details (https://github.com/ImRecc/algorithemInCpp/blob/main/dataStructureInLeetCode/descriptions.md#funtwist-p2png)
             }
             
         }
