@@ -16,7 +16,7 @@ public:
         }
         ListNode *p1 = head;
         ListNode *p2 = head->next; //p1->next will leads to runtime error
-        while (p1 != NULL && p2 != NULL && p2->next != NULL) 
+        while (p1 != NULL && p2 != NULL && p2->next != NULL) //no matter how over boundary, it's over.
         {
             if (p1 == p2) 
             {
