@@ -1,3 +1,4 @@
+// https://leetcode.com/explore/learn/card/linked-list/214/two-pointer-technique/1212/
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -5,7 +6,7 @@
  *     ListNode *next;
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
- *///
+ */
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
