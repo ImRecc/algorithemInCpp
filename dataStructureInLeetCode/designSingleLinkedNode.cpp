@@ -21,7 +21,7 @@ private:
     
 public:
     
-    MyLinkedList() {
+    MyLinkedList() {    //Object called MyLinkedList() and it's has two value;
         head = nullptr;  // Initialize an empty list
         size = 0;        // Start with size 0        
     }
