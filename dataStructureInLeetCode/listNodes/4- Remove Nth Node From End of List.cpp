@@ -1,3 +1,4 @@
+//leetcode.com/explore/learn/card/linked-list/214/two-pointer-technique/1296/
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -15,9 +16,10 @@ class Solution {
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
 
-        ListNode dummy(0, head); //let me explain about Object and Pointers later..
-        // note the slightly different for how I initialize the dummy node.
-        //I'll explain about heap\stack memory use later..
+        ListNode dummy(0, head); // for more details see description file 
+        // https://github.com/ImRecc/algorithemInCpp/blob/main/dataStructureInLeetCode/listNodes/descriptions.md#understanding-dummy-node-techniques-and-pointer-vs-object-usage-in-linked-list-operations
+
+        
         ListNode *p1 = &dummy; // Start p1 at the dummy node
         ListNode *p2 = &dummy; // Start p2 at the dummy node
         //why &? to access the address of object dummy;
