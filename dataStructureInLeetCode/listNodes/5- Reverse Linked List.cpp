@@ -1,5 +1,6 @@
 //https://leetcode.com/explore/learn/card/linked-list/219/classic-problems/1205/
-
+//this puzzle has the recursive solution
+//which very similar Stack Structure, I mean maybe next time we could think recursive like manipulating a stack?
 /**
  * Definition for singly-linked list.
  * struct ListNode {
