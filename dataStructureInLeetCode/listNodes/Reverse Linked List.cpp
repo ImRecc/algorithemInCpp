@@ -1,4 +1,5 @@
 //https://leetcode.com/explore/learn/card/linked-list/219/classic-problems/1205/
+
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -9,20 +10,25 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+// Iterate method;
+// just switch infors inside the pointers
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
-        ListNode* prev = nullptr;  // Previous node, initially null
-        ListNode* current = head;  // Current node, starting with head
-        ListNode* next = nullptr;  // Temporary storage for next node
-        
-        while (current != nullptr) {
-            next = current->next;   // Store the next node
-            current->next = prev;   // Reverse the link
-            prev = current;         // Move prev forward
-            current = next;         // Move current forward
+        ListNode *record = head;
+        if (head == NULL || head->next== NULL) return head; //if one or void node list, do nothing;
+        ListNode *curr = head->next;        //starts from second;
+        ListNode *pre = head;
+        ListNode *leadsTo=head;
+        head->next = NULL;
+        while(curr!=NULL)
+        {
+            leadsTo=curr->next;     //remember where to go
+            curr->next=pre;         //point current node->next = previous node;
+            pre=curr;               //change reverse target to next;
+            curr=leadsTo;
         }
+        return pre;         //since curr == NULL, we saved pre is new start of list
         
-        return prev;  // prev will be the new head of the reversed list
     }
 };
