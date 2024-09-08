@@ -48,6 +48,7 @@ public:
         return true;
     }
 
+//we can't just directly compare if we want stay o(n) not O(n).. or o(1) space, sad
 private:
         //reverse the secondHalf
         ListNode *reverseList(ListNode *head)
