@@ -27,6 +27,7 @@ public:
             // 计算中间元素
             for (int j = 1; j < i; j++) {
                 newRow[j] = prev[j - 1] + prev[j]; // 上一行相邻元素之和
+                //搭配vector<int> newRow(i+1, 1); 构造一个新的全是1的数组，也避免了边界问题
             }
             
             result.push_back(newRow); // 添加新行
