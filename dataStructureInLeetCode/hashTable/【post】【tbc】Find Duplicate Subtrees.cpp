@@ -1,11 +1,11 @@
+//新的、用传入树方法的解在下面
+
 //关键：需要识别“相同子树”，即比较子树的结构和节点值。序列化是核心技术，把子树变成字符串（或其他形式）来比较。
 //把二叉树（或子树）转换成一种唯一表示（通常是字符串）每棵子树序列化后，存入哈希表（HashMap），记录出现次数 
 //若某子树的序列化字符串出现多次（≥2），说明是重复子树，记录其根节点。
 //最主要的是二叉树的数字顺序表示：第n层有2^n个元素，然后每个元素i的左右子节点分别是2*i+1, 2*i+2
 //因为每层节点数翻倍（2 的幂），子节点索引基于父节点 idx 线性扩展。
 //例：idx=0（第0层），子节点 1,2（第1层）；idx=1（第1层），子节点 3,4（第2层）。
-
-
 
 /**
  * Definition for a binary tree node.
@@ -30,26 +30,69 @@
 class Solution {
 public:
     vector<TreeNode*> findDuplicateSubtrees(vector<int>& nums) { // 假设输入数组，null 为 INT_MIN
+//vector<TreeNode*> 是动态数组，元素是 TreeNode 的指针（TreeNode*）。
+        //TreeNode* ptr = &tree1;（取 tree1 地址），ptr->val = 2 改 tree1 值。
+        //void func(TreeNode& node)，node.val = 2 改原节点值。
+        
         unordered_map<string, pair<int, TreeNode*>> seen; // 序列 -> {次数, 节点}
         vector<TreeNode*> result;
         
         for (int i = 0; i < nums.size(); ++i) {
             if (nums[i] == INT_MIN) continue; // 跳过 null
             string serial = serialize(nums, i);
-            if (seen[serial].first++ == 1) {
+            if (seen[serial].first++ == 1)
+            //先判断再++啦，选是0》1，才是1》2；
+            {
                 result.push_back(new TreeNode(nums[i])); // 构造节点返回
             }
         }
         return result;
     }
     
-private:
+private:        
     string serialize(vector<int>& nums, int idx) {
         if (idx >= nums.size() || nums[idx] == INT_MIN) return "#"; // 空节点
         // 前序序列化：root,left,right
         string serial = to_string(nums[idx]) + "," +
                        serialize(nums, 2 * idx + 1) + "," +
                        serialize(nums, 2 * idx + 2);
+        return serial;
+    }
+};
+
+//这个建树再历遍也很麻烦，不如不这样
+
+
+
+
+//可用解
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    vector<TreeNode*> findDuplicateSubtrees(TreeNode* root) {
+        unordered_map<string, int> seen; // 序列 -> 次数
+        vector<TreeNode*> result;
+        serialize(root, seen, result);
+        return result;
+    }
+private:
+    string serialize(TreeNode* node, unordered_map<string, int>& seen, vector<TreeNode*>& result) {
+        if (!node) return "#";
+        string serial = to_string(node->val) + "," + serialize(node->left, seen, result) + "," + serialize(node->right, seen, result);
+        seen[serial]++;
+        if (seen[serial] == 2) { // 第二次出现
+            result.push_back(node); // 存原节点
+        }
         return serial;
     }
 };
