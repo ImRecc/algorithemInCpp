@@ -28,6 +28,10 @@ public:
         
         // 步骤 1：构建 LPS 表
         vector<int> lps(m, 0); // LPS 数组，类似能量模式表
+        //lps[m] = {0};：语法错误，{0} 不能直接赋值给单个元素，正确应为 lps[m] = 0;，且需确保 m 在 lps 范围内。
+        //lps = [m, 0];：语法错误，[m, 0] 不是 C++ 合法写法。
+        //vector<int> lps(m, 0);：正确，创建大小为 m 的向量，所有元素初始化为 0。
+        //vector<int> lps = {m, 0};：正确，创建向量 {m, 0}，大小为 2。
         int len = 0, j = 1; // len 是当前最长前缀后缀长度
         while (j < m) {
             if (needle[j] == needle[len]) {
