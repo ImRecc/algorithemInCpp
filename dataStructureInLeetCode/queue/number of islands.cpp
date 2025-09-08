@@ -29,6 +29,7 @@ private:
         queue<pair<int, int>> toVisit; // 待访问的坐标
         toVisit.push({startRow, startCol});
         //{startRow, startCol} 是 C++ 的初始化列表，构造一个 pair<int, int> 对象。
+        //比如vector<int> a = {1,2,3};
         
         grid[startRow][startCol] = '0'; // 标记为已访问
         
