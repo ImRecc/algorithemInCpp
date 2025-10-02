@@ -13,13 +13,17 @@ public:
         image[sr][sc] = newColor; // 标记起始点
         
         vector<pair<int,int>> dirs = {{-1,0}, {0,-1}, {1,0}, {0,1}}; // 四向
-        while (!toVisit.empty()) {
+        while (!toVisit.empty()) 
+        {
             auto [r, c] = toVisit.front(); toVisit.pop();
-            for (auto [dr, dc] : dirs) {
+            for (auto [dr, dc] : dirs) 
+            {
                 int nr = r + dr, nc = c + dc;
-                if (nr >= 0 && nr < m && nc >= 0 && nc < n && image[nr][nc] == oldColor) {
+                if (nr >= 0 && nr < m && nc >= 0 && nc < n && image[nr][nc] == oldColor) 
+                {
                     image[nr][nc] = newColor; // 标记
                     toVisit.push({nr, nc});
+                    //这样也就避开了第二个专门用来存储“是否已访问”状态的数据结构了
                 }
             }
         }
