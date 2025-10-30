@@ -1,4 +1,5 @@
-//直接来的话可能会
+//直接来的话可能会太慢，2^114514
+class Solution{
 public:
     double myPow(double x, int n) {
         if (n == 0) return 1.0;
