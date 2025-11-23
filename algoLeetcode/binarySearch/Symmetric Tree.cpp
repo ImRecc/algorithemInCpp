@@ -15,6 +15,60 @@
 */
 /*层序历遍的话就需要一个双指针，动态数组，重置双指针这样那样的，很麻烦*/
 /*括号配对或者回文那样的栈处理方法又无法处理比如6677这样的例子*/
+//但是用vector的话其实更直观一点点
+//双指针理解起来也更容易一些
+class Solution {
+public:
+    bool isSymmetric(TreeNode* root) 
+    {
+        if (!root) return true;
+        
+        vector<TreeNode*> level;           // 动态数组！
+        level.push_back(root->left);
+        level.push_back(root->right);
+        
+        while (!level.empty()) 
+        {
+            int left = 0;
+            int right = (int)level.size() - 1;
+            //用这种方法来更新指针位置
+            
+            // 双指针同时从两端往中间走
+            while (left < right) 
+            {
+                TreeNode* l = level[left];
+                TreeNode* r = level[right];
+                
+                // 两边都空 → OK，继续
+                if (!l && !r) 
+                { 
+                    left++; right--; 
+                    continue; 
+                }
+                // 一空一非空 或 值不相等 → 不对称
+                if (!l || !r || l->val != r->val) {
+                    return false;
+                }
+                left++; right--;
+            }
+            
+            // 准备下一层：把下一层所有孩子加入 vector
+            vector<TreeNode*> nextLevel;
+            for (TreeNode* node : level) 
+            {
+                if (node) 
+                {                     // 只有非空节点才加孩子
+                    nextLevel.push_back(node->left);
+                    nextLevel.push_back(node->right);
+                }
+            }
+            level = std::move(nextLevel);       // 换到下一层
+            //不要 nextLevel 这个 vector 了，它里面的所有内存全部偷给 level
+        }
+        return true;
+    }
+};
+/*
 class Solution {
 public:
     bool isSymmetric(TreeNode* root) 
@@ -43,3 +97,4 @@ public:
         return true;
     }
 };
+*/
