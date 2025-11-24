@@ -9,36 +9,28 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+/*正常来说就是先序遍历嘛，用个栈从根到左子节点一路下去
+到头了比对，不对就回退访问右边*/
+/*但是这题传入了目标值，那如果存在：
+叶子节点，且去掉到这个叶子节点的路径的值剩下的和叶子节点的值相同
+那就成立
+如果用递归来多路线的执行同样的操作那么很快就能找到结果了
+*/
 class Solution {
 public:
-    vector<int> preorderTraversal(TreeNode* root) {
-        vector<int> result;
-        if (!root) return result;
+    bool hasPathSum(TreeNode* root, int targetSum) {
+        if (!root) return false;
         
-        stack<TreeNode*> stk;
-        TreeNode* cur = root;
-        
-        while (cur || !stk.empty()) {
-            
-            // 根节点入栈，访问左节点，有则左节点设为新的根节点入栈，继续访问
-            //           → “入栈一路左”的过程，同时前序就在这里访问根！
-            while (cur) {
-                result.push_back(cur->val);   // 前序：先访问根节点
-                stk.push(cur);                // 入栈，为以后回溯做准备
-                cur = cur->left;              // 一直往左走
-            }
-            
-            // 没有左子树了 弹出栈顶，实现回溯
-            cur = stk.top();
-            stk.pop();
-            
-            // 回溯后判定有没有右节点，有就继续设为新根节点入栈继续找
-            //           没有就继续弹栈回溯
-            cur = cur->right;   // 如果没有右孩子，cur 变为 nullptr
-                                // 下次外层 while 会继续弹栈，直到栈空或找到有右孩子的节点
+        // 走到叶子节点了
+        if (!root->left && !root->right) {
+            return root->val == targetSum;
         }
         
-        // 栈空则判定为遍历结束
-        return result;
+        // 递归检查左右子树（自动减去当前节点值）
+        //当前值作为了一个路径节点，需要被减去
+        //以便访问到叶子节点时候比对剩下的是否和叶子节点值一致
+        int remain = targetSum - root->val;
+        return hasPathSum(root->left, remain) || 
+               hasPathSum(root->right, remain);
     }
 };
